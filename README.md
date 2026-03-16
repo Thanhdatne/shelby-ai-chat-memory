@@ -2,41 +2,65 @@
 
 Prototype exploring **AI conversation memory stored on Shelby decentralized storage**.
 
-This project demonstrates how AI agents can persist conversation history using **Shelby blob storage**.
+This project demonstrates how AI agents can persist conversation history using **Shelby blob storage** instead of traditional centralized databases.
 
-Instead of storing chat logs on centralized databases, conversations are packaged into JSON memory snapshots and uploaded to Shelby as verifiable blobs.
+AI conversations are packaged into **memory snapshots (JSON)** and uploaded to Shelby as **verifiable blobs**.
 
-# 📋Concept
+---
 
-AI systems increasingly rely on persistent memory:
+# 🚀 Concept
 
-• conversation history
-• reasoning traces
-• agent state snapshots
+Modern AI systems require persistent memory:
 
-Shelby provides a decentralized storage layer capable of storing these datasets as **durable and verifiable blobs**.
+•  conversation history  
+•  reasoning traces  
+•  agent state snapshots  
+•  contextual knowledge  
 
-This prototype simulates an AI system that generates conversations and stores them on Shelby.
+Most systems store this data in centralized databases.
 
-# Architecture
+This project explores a different approach:
 
-AI Agent
-↓
-Conversation Snapshot (JSON)
-↓
-Shelby Upload (Blob Storage)
-↓
-Verifiable Storage Network
+Using **Shelby decentralized storage** as a **memory layer for AI agents**.
 
-# Features
+---
 
-• Upload AI memory snapshots to Shelby
-• Autonomous AI agent generating conversations
-• Web interface for manual uploads
-• CLI interaction with Shelby network
-• Listing stored blobs
+#  Architecture
 
-# Project Structure
+```
+           AI Agent
+             │
+             ▼
+      Conversation Snapshot
+         (JSON Memory)
+             │
+             ▼
+       Shelby Blob Storage
+             │
+             ▼
+       Memory Explorer UI
+```
+
+Workflow:
+
+1️⃣ AI agent generates a conversation  
+2️⃣ Conversation is packaged as a JSON memory snapshot  
+3️⃣ Snapshot is uploaded to Shelby  
+4️⃣ Stored blobs can be explored using the Memory Explorer UI  
+
+---
+
+# ✨ Features
+
+•  Upload AI memory snapshots to Shelby  
+•  Autonomous AI agent generating conversations  
+•  Simple web interface for manual uploads  
+•  Shelby CLI integration  
+•  Memory Explorer UI to inspect stored blobs  
+
+---
+
+# 📁 Project Structure
 
 ```text
 shelby-ai-chat-memory
@@ -57,51 +81,61 @@ shelby-ai-chat-memory
     └── explorer.ts
 ```
 
-# Requirements
+---
 
-Node.js v22+
-Shelby CLI
-Aptos CLI
+# ⚙️ Requirements
 
-Install Shelby CLI first:
+ Node.js v22+
 
+ Shelby CLI  
 https://docs.shelby.xyz/tools/cli
 
-# Installation
+🔗 Aptos CLI  
+https://aptos.dev/tools/aptos-cli
+
+---
+
+# 📦 Installation
 
 Clone the repository
 
-```
+```bash
 git clone https://github.com/Thanhdatne/shelby-ai-chat-memory
 cd shelby-ai-chat-memory
 ```
 
 Install dependencies
 
-```
+```bash
 npm install
 ```
 
-# 🛠️Setup Shelby
+---
+
+# 🔧 Setup Shelby
 
 Initialize Shelby configuration:
 
-```
+```bash
 shelby config init
 ```
 
-Fund the dev wallet using:
+Fund your dev wallet using:
 
-ShelbyUSD faucet
-Aptos devnet faucet
+💰 ShelbyUSD faucet  
+💰 Aptos devnet faucet  
 
-# Run Web Server
+---
 
-```
+# ⚡ Quick Demo
+
+Start the server:
+
+```bash
 npm start
 ```
 
-Open:
+Open in browser:
 
 ```
 http://localhost:3000
@@ -109,43 +143,92 @@ http://localhost:3000
 
 Upload a memory snapshot JSON to Shelby.
 
-# Run Autonomous AI Agent
+---
+
+# 🔎 Memory Explorer
+
+The project also includes a simple explorer UI.
+
+Open:
 
 ```
+http://localhost:3000/explorer.html
+```
+
+This page lists memory blobs stored on Shelby.
+
+---
+
+# Autonomous AI Agent
+
+The project includes a simulated AI agent that generates conversations automatically.
+
+Run the agent:
+
+```bash
 npm run agent
 ```
 
 The agent will:
 
-• generate simulated conversations
-• package them as memory snapshots
-• upload them to Shelby
+• generate conversations  
+• package them as memory snapshots  
+• upload them to Shelby  
 
-every 30 seconds.
+every **30 seconds**.
+
+---
 
 # Example Memory Snapshot
 
-```
+```json
 {
   "session": "chat-001",
   "messages": [
-    { "role": "user", "content": "What is Shelby?" },
-    { "role": "assistant", "content": "Shelby is decentralized blob storage." }
+    {
+      "role": "user",
+      "content": "What is Shelby?"
+    },
+    {
+      "role": "assistant",
+      "content": "Shelby is decentralized blob storage."
+    }
   ],
   "timestamp": "2026-03-16"
 }
 ```
 
-# Why Shelby
+---
 
-AI systems generate large volumes of dynamic data.
+# Why Shelby?
 
-Shelby offers a decentralized infrastructure for storing these datasets as verifiable blobs without relying on centralized storage providers.
+AI systems produce large volumes of dynamic data.
 
-This prototype explores Shelby as a **memory layer for AI agents**.
+Shelby provides a decentralized infrastructure capable of storing this data as **verifiable blobs** across a distributed network.
+
+This project explores Shelby as a **long-term memory layer for AI agents**.
+
+---
+
+# Future Work
+
+Potential extensions for this prototype:
+
+•  AI agent long-term memory  
+•  storing reasoning traces  
+•  Shelby dataset explorer  
+•  decentralized AI training datasets  
+•  integration with real AI models  
+
+---
 
 # Status
 
-Experimental prototype built while exploring Shelby developer tooling.
+Experimental prototype built while exploring **Shelby developer tooling**.
 
-Contributions and ideas welcome.
+---
+
+# Author
+
+Built by  
+https://github.com/Thanhdatne
