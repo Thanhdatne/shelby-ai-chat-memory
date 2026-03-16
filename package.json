@@ -1,11 +1,12 @@
 {
-  "name": "shelby-ai-chat-memory",
+  "name": "shelby-ai-longterm-memory",
   "version": "1.0.0",
-  "description": "AI chat memory stored on Shelby decentralized storage",
+  "description": "AI long-term memory storage using Shelby",
   "scripts": {
-    "upload": "ts-node src/uploadChat.ts",
-    "list": "ts-node src/listChats.ts",
-    "download": "ts-node src/downloadChat.ts",
+    "start": "ts-node src/index.ts",
+    "upload": "ts-node src/uploadMemory.ts",
+    "list": "ts-node src/listMemories.ts",
+    "download": "ts-node src/downloadMemory.ts",
     "build": "tsc",
     "dev": "tsc -w"
   },
