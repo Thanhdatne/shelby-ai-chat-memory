@@ -1,0 +1,19 @@
+{
+  "name": "shelby-ai-chat-memory",
+  "version": "1.0.0",
+  "description": "AI chat memory stored on Shelby decentralized storage",
+  "scripts": {
+    "upload": "ts-node src/uploadChat.ts",
+    "list": "ts-node src/listChats.ts",
+    "download": "ts-node src/downloadChat.ts",
+    "build": "tsc",
+    "dev": "tsc -w"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "ts-node": "^10.9.2"
+  }
+}
