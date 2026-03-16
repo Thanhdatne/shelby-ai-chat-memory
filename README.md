@@ -1,72 +1,58 @@
-# Shelby AI Chat Memory
+# Shelby AI Long-Term Memory
 
-A simple experiment exploring how **AI chat history can be stored using Shelby decentralized storage**.
+A small developer experiment exploring how **AI agents can store long-term memory on Shelby decentralized storage**.
 
-Instead of saving conversations in centralized databases, this project stores them as **verifiable blobs on Shelby**.
+Instead of saving reasoning traces and conversation logs in centralized databases, this project demonstrates how they can be stored as **verifiable blobs on Shelby**.
 
 ## ⚡Motivation
 
-AI agents generate large amounts of conversational data.
+AI systems increasingly rely on persistent memory:
 
-Typical storage solutions rely on:
+* conversation history
+* reasoning traces
+* research summaries
+* knowledge snapshots
 
-* centralized databases
-* cloud storage
-* application servers
+Most AI infrastructure stores this data in centralized databases.
 
-This creates several issues:
+Shelby introduces a different model: **decentralized blob storage with cryptographic verification**.
 
-* lack of verifiability
-* centralized control
-* limited transparency
-
-Shelby offers an alternative approach: **decentralized blob storage with cryptographic integrity guarantees**.
-
-This repository demonstrates a simple idea:
-
-> What if AI conversation memory could live on decentralized storage?
+This repository explores the idea of using Shelby as a **long-term memory layer for AI agents**.
 
 ## 📋Concept
 
-Each conversation session is serialized as JSON and uploaded as a **blob** to Shelby.
+An AI agent periodically generates a **memory snapshot** describing its state or knowledge.
 
-Example stored conversation:
+Example memory snapshot:
 
 ```json
 {
-  "session": "chat-001",
-  "messages": [
-    {
-      "role": "user",
-      "content": "What is Shelby?"
-    },
-    {
-      "role": "assistant",
-      "content": "Shelby is a decentralized blob storage network."
-    }
-  ],
-  "timestamp": "2026-03-16"
+  "agent": "research-agent",
+  "topic": "Shelby decentralized storage",
+  "summary": "Shelby provides decentralized blob storage with verifiable commitments.",
+  "timestamp": "2026-03-16T10:00:00Z"
 }
 ```
 
-Shelby returns:
+This snapshot is serialized as JSON and uploaded to Shelby as a **blob**.
+
+Shelby returns metadata including:
 
 * Merkle root
-* blob commitments
-* storage metadata
+* chunk commitments
+* storage duration
 
-This allows the conversation data to be **verified and retrieved later**.
+These allow the memory snapshot to be **verified and retrieved later**.
 
-## ⚡Requirements
+## Requirements
 
-Before running this project you need:
+Before running this project you must install:
 
-* Node.js v22+
-* Shelby CLI
-* Aptos CLI
+Node.js v22+
+Shelby CLI
+Aptos CLI
 
 Shelby CLI guide:
-
 https://docs.shelby.xyz/tools/cli
 
 ## Installation
@@ -74,8 +60,8 @@ https://docs.shelby.xyz/tools/cli
 Clone the repository
 
 ```
-git clone https://github.com/YOURNAME/shelby-ai-chat-memory
-cd shelby-ai-chat-memory
+git clone https://github.com/YOURNAME/shelby-ai-longterm-memory
+cd shelby-ai-longterm-memory
 ```
 
 Install dependencies
@@ -90,21 +76,17 @@ Build the project
 npm run build
 ```
 
-## 🛠️ Setup
+## 🛠️Setup
 
 Create configuration
 
 ```
-npm run config
+shelby config init
 ```
 
-This generates a `.env` file containing:
+This creates a configuration and wallet for development.
 
-* Aptos account
-* private key
-* Shelby RPC endpoint
-
-Fund the account using:
+Fund the address using:
 
 ShelbyUSD faucet
 https://docs.shelby.xyz/apis/faucet/shelbyusd
@@ -114,19 +96,19 @@ https://docs.shelby.xyz/apis/faucet/aptos
 
 ## 💻Usage
 
-Upload chat memory
+Upload AI memory snapshot
 
 ```
 npm run upload
 ```
 
-List stored chats
+List stored memories
 
 ```
 npm run list
 ```
 
-Download a chat session
+Download memory
 
 ```
 npm run download
@@ -134,39 +116,22 @@ npm run download
 
 ## Example Workflow
 
-1. A user interacts with an AI agent
-2. The conversation is stored as structured JSON
-3. The JSON file is uploaded to Shelby as a blob
-4. The Merkle root verifies the stored data
-5. The conversation can later be retrieved and verified
+1. AI agent generates a knowledge snapshot
+2. Snapshot is saved as JSON
+3. JSON file is uploaded to Shelby
+4. Shelby stores it as a blob
+5. The data can later be verified and retrieved
 
-## Why Shelby for AI Systems?
+## Future Work
 
-AI infrastructure increasingly needs:
+Possible extensions:
 
-* persistent storage
-* verifiable data
-* decentralized infrastructure
-
-Shelby can serve as a **storage layer for AI-generated data**, including:
-
-* chat logs
-* reasoning traces
-* datasets
-* embeddings
-* model outputs
-
-## Future Improvements
-
-Possible extensions of this idea:
-
-* automatic conversation uploads
-* LLM integration
-* vector embeddings stored on Shelby
-* decentralized AI memory layer
+* automated memory snapshots
+* integration with LLM agents
+* embedding storage
+* decentralized AI dataset archives
 
 ## Status
 
-Experimental prototype.
+Experimental prototype built while exploring Shelby developer tooling.
 
-Built while exploring Shelby developer tools.
