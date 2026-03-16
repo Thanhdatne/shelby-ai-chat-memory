@@ -1,6 +1,14 @@
+export interface ChatMessage {
+
+  role: "user" | "assistant"
+  content: string
+
+}
+
 export interface MemorySnapshot {
-  agent: string
-  topic: string
-  summary: string
+
+  session: string
+  messages: ChatMessage[]
   timestamp: string
+
 }
