@@ -1,0 +1,14 @@
+{
+  "session": "chat-001",
+  "messages": [
+    {
+      "role": "user",
+      "content": "What is Shelby?"
+    },
+    {
+      "role": "assistant",
+      "content": "Shelby is a decentralized blob storage network."
+    }
+  ],
+  "timestamp": "2026-03-16"
+}
