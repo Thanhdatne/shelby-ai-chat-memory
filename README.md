@@ -38,21 +38,23 @@ Verifiable Storage Network
 
 # Project Structure
 
-```
+```text
 shelby-ai-chat-memory
 │
 ├── public
-│   └── index.html        # simple upload UI
+│   ├── index.html
+│   └── explorer.html
 │
 ├── assets
 │   └── example-memory.json
 │
 └── src
-    ├── server.ts         # API server
-    ├── agent.ts          # AI conversation generator
-    ├── memory.ts         # memory schema
-    ├── uploader.ts       # Shelby upload wrapper
-    └── scheduler.ts      # autonomous agent
+    ├── server.ts
+    ├── agent.ts
+    ├── memory.ts
+    ├── uploader.ts
+    ├── scheduler.ts
+    └── explorer.ts
 ```
 
 # Requirements
