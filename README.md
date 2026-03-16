@@ -6,8 +6,6 @@ This project demonstrates how AI agents can persist conversation history using *
 
 AI conversations are packaged into **memory snapshots (JSON)** and uploaded to Shelby as **verifiable blobs**.
 
----
-
 # 🚀 Concept
 
 Modern AI systems require persistent memory:
@@ -22,8 +20,6 @@ Most systems store this data in centralized databases.
 This project explores a different approach:
 
 Using **Shelby decentralized storage** as a **memory layer for AI agents**.
-
----
 
 #  Architecture
 
@@ -48,8 +44,6 @@ Workflow:
 3️⃣ Snapshot is uploaded to Shelby  
 4️⃣ Stored blobs can be explored using the Memory Explorer UI  
 
----
-
 # ✨ Features
 
 •  Upload AI memory snapshots to Shelby  
@@ -57,8 +51,6 @@ Workflow:
 •  Simple web interface for manual uploads  
 •  Shelby CLI integration  
 •  Memory Explorer UI to inspect stored blobs  
-
----
 
 # 📁 Project Structure
 
@@ -81,8 +73,6 @@ shelby-ai-chat-memory
     └── explorer.ts
 ```
 
----
-
 # ⚙️ Requirements
 
  Node.js v22+
@@ -92,8 +82,6 @@ https://docs.shelby.xyz/tools/cli
 
 🔗 Aptos CLI  
 https://aptos.dev/tools/aptos-cli
-
----
 
 # 📦 Installation
 
@@ -110,8 +98,6 @@ Install dependencies
 npm install
 ```
 
----
-
 # 🔧 Setup Shelby
 
 Initialize Shelby configuration:
@@ -124,8 +110,6 @@ Fund your dev wallet using:
 
 💰 ShelbyUSD faucet  
 💰 Aptos devnet faucet  
-
----
 
 # ⚡ Quick Demo
 
@@ -143,8 +127,6 @@ http://localhost:3000
 
 Upload a memory snapshot JSON to Shelby.
 
----
-
 # 🔎 Memory Explorer
 
 The project also includes a simple explorer UI.
@@ -156,8 +138,6 @@ http://localhost:3000/explorer.html
 ```
 
 This page lists memory blobs stored on Shelby.
-
----
 
 # Autonomous AI Agent
 
@@ -176,8 +156,6 @@ The agent will:
 • upload them to Shelby  
 
 every **30 seconds**.
-
----
 
 # Example Memory Snapshot
 
@@ -198,8 +176,6 @@ every **30 seconds**.
 }
 ```
 
----
-
 # Why Shelby?
 
 AI systems produce large volumes of dynamic data.
@@ -207,8 +183,6 @@ AI systems produce large volumes of dynamic data.
 Shelby provides a decentralized infrastructure capable of storing this data as **verifiable blobs** across a distributed network.
 
 This project explores Shelby as a **long-term memory layer for AI agents**.
-
----
 
 # Future Work
 
@@ -220,13 +194,9 @@ Potential extensions for this prototype:
 •  decentralized AI training datasets  
 •  integration with real AI models  
 
----
-
 # Status
 
 Experimental prototype built while exploring **Shelby developer tooling**.
-
----
 
 # Author
 
