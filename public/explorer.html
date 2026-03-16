@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Shelby Memory Explorer</title>
+
+</head>
+
+<body>
+
+<h2>Shelby AI Memory Explorer</h2>
+
+<button onclick="load()">Load Memories</button>
+
+<pre id="memories"></pre>
+
+<script>
+
+async function load(){
+
+const res = await fetch("/memories")
+
+const data = await res.json()
+
+document.getElementById("memories").innerText =
+JSON.stringify(data,null,2)
+
+}
+
+</script>
+
+</body>
+
+</html>
