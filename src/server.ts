@@ -2,7 +2,7 @@ import express from "express"
 import cors from "cors"
 import multer from "multer"
 import { execSync } from "child_process"
-import fs from "fs"
+import { getStoredMemories } from "./explorer"
 
 const app = express()
 
@@ -16,8 +16,11 @@ app.post("/upload", upload.single("memory"), (req, res) => {
   const file = req.file?.path
 
   if (!file) {
+
     res.status(400).send("No file")
+
     return
+
   }
 
   const name = "ai-memory-" + Date.now()
@@ -39,25 +42,20 @@ app.post("/upload", upload.single("memory"), (req, res) => {
 
 })
 
-app.get("/list", (req, res) => {
+app.get("/memories", (req, res) => {
 
-  try {
+  const memories = getStoredMemories()
 
-    const result = execSync("shelby list").toString()
-
-    res.send(result)
-
-  } catch {
-
-    res.status(500).send("Failed")
-
-  }
+  res.json(memories)
 
 })
 
 app.listen(3000, () => {
 
   console.log("Server running")
-  console.log("Open http://localhost:3000")
+
+  console.log("UI http://localhost:3000")
+
+  console.log("Explorer http://localhost:3000/explorer.html")
 
 })
